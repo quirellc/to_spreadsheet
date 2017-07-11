@@ -33,6 +33,8 @@ module ToSpreadsheet::Themes
               cell.type  = :date
               cell.value = val
             end
+          when /forcetext/
+            cell.type = :string
         end
       }
     end
