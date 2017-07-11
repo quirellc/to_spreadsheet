@@ -14,9 +14,9 @@ end.flatten
 
 Gem::Specification.new do |s|
   s.name              = "to_spreadsheet"
-  s.email             = "glex.spb@gmail.com"
-  s.author            = "Gleb Mazovetskiy"
-  s.homepage          = "https://github.com/glebm/to_spreadsheet"
+  s.email             = "ryanj@openquire.com"
+  s.author            = "Ryan Jansen"
+  s.homepage          = "https://github.com/Quire/to_spreadsheet"
   s.summary           = "Render existing views as Excel documents with style!"
   s.description       = "Render XLSX from Rails using existing views ( .*.html => .xlsx )"
   s.files             = Dir["lib/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
