@@ -42,6 +42,7 @@ module ToSpreadsheet
           # Row <-> %tr association
           context.assoc! xls_row, row_node
           row_node.css('th,td').each do |cell_node|
+            debugger
             xls_col = xls_row.add_cell cell_node.inner_text
             # Cell <-> th or td association
             context.assoc! xls_col, cell_node
