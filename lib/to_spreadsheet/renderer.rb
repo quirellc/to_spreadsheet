@@ -36,7 +36,6 @@ module ToSpreadsheet
             name: xml_table.css('caption').inner_text.presence || xml_table['name'] || "Sheet #{i + 1}"
         )
         # Sheet <-> %table association
-        debugger
         context.assoc! sheet, xml_table
         xml_table.css('tr').each do |row_node|
           xls_row = sheet.add_row
