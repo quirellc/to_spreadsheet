@@ -43,6 +43,9 @@ module ToSpreadsheet
           # Row <-> %tr association
           context.assoc! xls_row, row_node
           row_node.css('th,td').each do |cell_node|
+            cell_options = {}
+            cell_type = cell_node['data-type']
+            cell_options[:type] = cell_type.to_sym if cell_type
             xls_col = xls_row.add_cell cell_node.inner_text
             # Cell <-> th or td association
             context.assoc! xls_col, cell_node
