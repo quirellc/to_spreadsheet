@@ -3,6 +3,8 @@ require 'nokogiri'
 
 module ToSpreadsheet
   module Renderer
+    INVALID_CELL_STARTING_VALUES = ['@','=','-','+'].freeze
+
     extend self
 
     def to_stream(html, context = nil)
@@ -53,5 +55,18 @@ module ToSpreadsheet
       end
       package
     end
+
+    def _clean_cell_value(cell_value)
+      if cell_value.respond_to?(:start_with?)
+        if cell_value.start_with?(INVALID_CELL_STARTING_VALUES)
+          ''
+        else
+          cell_value
+        end
+      else
+        cell_value
+      end
+    end
+
   end
 end
