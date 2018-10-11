@@ -47,7 +47,7 @@ module ToSpreadsheet
             cell_options = {}
             cell_type = cell_node['data-type']
             cell_options[:type] = cell_type.to_sym if cell_type
-            xls_col = xls_row.add_cell cell_node.inner_text, cell_options
+            xls_col = xls_row.add_cell _clean_cell_value(cell_node.inner_text), cell_options
             # Cell <-> th or td association
             context.assoc! xls_col, cell_node
           end
