@@ -1,3 +1,3 @@
 module ToSpreadsheet
-  VERSION = '1.0.7.0'
+  VERSION = '1.0.7.1'
 end
