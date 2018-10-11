@@ -58,7 +58,7 @@ module ToSpreadsheet
 
     def _clean_cell_value(cell_value)
       if cell_value.respond_to?(:start_with?)
-        if cell_value.start_with?(INVALID_CELL_STARTING_VALUES)
+        if cell_value.start_with?(*INVALID_CELL_STARTING_VALUES)
           ''
         else
           cell_value
